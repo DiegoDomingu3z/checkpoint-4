@@ -13,7 +13,7 @@ export class Weather {
         return `
         <div class="col-12 text-end">
         <h3>
-        <div onclick="">${this.weather}</div>
+        <div>${this.weather}</div>
       <div>${this.name}</div>
       </h3>
     </div>

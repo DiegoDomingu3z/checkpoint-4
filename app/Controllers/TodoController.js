@@ -42,6 +42,7 @@ export class TodoController{
             description: form.description.value
         }
         await todoService.addTodo(todoData)
+        form.reset()
         console.log('creating todo');
     } catch (error) {
         console.log(error);
@@ -51,8 +52,15 @@ export class TodoController{
 
 
 
-    async deleteTodo(){
-        
+    async deleteTodo(id){
+        try {
+            await todoService.deleteTodo(id)
+            console.log('deleting');
+        } catch (error) {
+            console.log(error);
+            Pop.toast(error.message,'error')
+        }
+
     }
 
 }

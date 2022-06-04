@@ -22,6 +22,13 @@ class TodoService{
         ProxyState.todo = [...ProxyState.todo, new Todo(res.data)]
     }
 
+    async deleteTodo(id){
+        const res = await sandboxApi.delete('diego/todos', id)
+        console.log('delete', res.data);
+        ProxyState.todo = ProxyState.todo.filter(t => t.id != id)
+        ProxyState.todo = ProxyState.todo
+    }
+
 
 
 

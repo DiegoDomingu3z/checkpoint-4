@@ -5,7 +5,8 @@ import { Pop } from "../Utils/Pop.js";
 
 function _drawTime(){
     var time = new Date();
-    document.getElementById('date-time').innerText = time
+    time.toTimeString()
+    document.getElementById('date-time').innerText = time.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
 }
 
 function _draw(){
