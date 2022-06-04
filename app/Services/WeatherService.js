@@ -3,6 +3,9 @@ import { Weather } from "../Models/Weather.js";
 import { sandboxApi } from "./AxiosService.js";
 
 
+
+
+
 class WeatherService{
     async getWeather(){
         const res = await sandboxApi.get('weather')
