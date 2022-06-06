@@ -44,9 +44,11 @@
       color: black;
       font-weight: bolder;
       font-style: italic;
-      
 
-    
 
+  }
+
+  .time{
+      font-size: 65px;
   }
   

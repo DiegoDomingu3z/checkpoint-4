@@ -11,7 +11,7 @@ export class Quote{
 
     get Template(){
         return `
-        <div class="author selectable"><h6>${this.content}</h6></div>
+        <div class="author selectable captions"><h6>${this.content}</h6></div>
         <div class="hide">"${this.author}"</div>
         `
     }
