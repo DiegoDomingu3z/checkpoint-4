@@ -6,7 +6,7 @@ import { Pop } from "../Utils/Pop.js";
 function _drawTime(){
     var time = new Date();
     time.toTimeString()
-    document.getElementById('date-time').innerText = time.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
+    document.getElementById('date-time').innerText = time.toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric' })
 }
 
 function _draw(){
@@ -20,20 +20,33 @@ export class WeatherController{
         console.log('weather controller is working');
         this.getWeather()
         ProxyState.on('weather', _draw)
-        _draw()
         _drawTime()
+    
     }
 
 
     async getWeather(){
         try {
             console.log('getting weather');
+            console.log('this is the weather',ProxyState.weather)
         await weatherService.getWeather()
         } catch (error) {
             console.log(error);
             Pop.toast(error.message, 'error')
         }
     }
+
+
+    seeFa(){
+        document.getElementById('temp').innerHTML = ProxyState.weather.fTemp
+    }
+
+    seeCelsius(){
+        document.getElementById('temp').innerHTML = ProxyState.weather.Temp
+
+    }
+
+   
 }
 
 

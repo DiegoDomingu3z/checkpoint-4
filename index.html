@@ -8,27 +8,82 @@
   <link rel="icon" href="https://bcw.blob.core.windows.net/public/img/9977764104160066">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <link rel="stylesheet" href="//cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="assets/style/main.css">
+  <link rel="stylesheet" href="//cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="assets/style/main.css">
   <link rel="stylesheet" href="assets/style/style.css">
   <title>checkpoint-4</title>
 </head>
-<body class="">
-  <header class="container-fluid">
-    <div class="row p-3" id="weather"> 
+
+<body class="bg">
+  <header class="container-fluid headers">
+    <div class="row p-3" id="weather">
     </div>
+
   </header>
 
 
 
 
   <main class="container-fluid">
+  
     
-    <div class="row">
-      <h1><div class="col-12 text-center" id="date-time">
-      </div></h1>
+
+      <div class="offcanvas offcanvas-end half-black headers" tabindex="" id="Todo" aria-labelledby="Todo">
+        <div class="offcanvas-header text-light">
+          <button type="button" class="btn btn-white border border-1 border-white  text-reset" data-bs-dismiss="offcanvas" aria-label="Close"><i class="mdi mdi-close-circle-outline"></i></button>
+        </div>
+        <div class="offcanvas-body">
+          <div class="headers text-center p-3"><b>TODO LIST</b></div>
+          <form action="" onsubmit="app.todoController.addTodo()">
+            <div>
+              <input id="description"  required name="description" type="text" placeholder="New todo" class="form-control half-black">
+              <div class="p-2 text-end"><button class="btn border border-1 border-white text-white"><b>Add</b></button></div>
+            </div>
+          </form>
+          <div class="" id="todo-list">
+          </div>
+          <div class="row text-end headers font-weight-bold">
+            <div id="todo-count"></div>
+        </div>
+      </div>
     </div>
-   
+
+    <div class="row p-5 m-5 text-center">
+      <h1>
+        <div class="col-12">
+        </div>
+      </h1>
+    </div>
+    <div class="row p-4 headers text-center">
+      <h1>
+        <div class="col-12 text-bottom-center" id="date-time">
+        </div>
+      </h1>
+    </div>
+    <div class="row p-4">
+      <div class="col-4 text-end">
+      </div>
+      <div class="col-5 text-end">
+
+      </div>
+      <div class="col-3">
+        <!-- <div id="todo-count"></div>
+        <div class="list" id="todo-list">
+
+        </div>
+        <div class="row text-end">
+          <form action="" onsubmit="app.todoController.addTodo()">
+            <div>
+              <input id="description" name="description" type="text" placeholder="To do">
+              <button>add</button>
+            </div> -->
+
+          
+        </div>
+      </div>
+    </div>
+
+
   </main>
 
 
@@ -38,31 +93,22 @@
 
 
 
-  <footer class="bg-dark text-light container-fluid">
-    <div class="row">
-      <div class="col-4"></div>
-      <div class="col-4"></div>
-      <div class="col-4"> 
-        <div class="row" id="todo-list">
-
-          <!-- <div class="bg-light text-dark ">
-            <div>
-              you have this to do 
-            </div>
-          </div> -->
-        </div>
-        <div class="col-4">
-        <form action="" onsubmit="app.todoController.addTodo()">
-          <div>
-            <input id="description" name="description"  type="text" placeholder="To do">
-            <button>add</button>
-          </div>
-        
-        </form>
-        </div></div>
+  <footer class=" container-fluid">
+    <div class="row captions fs-5">
+      <div class="col-4" id="img" >
+       
+       
+      </div>
+      <div class="col-4 text-center " id="quote">
+       
+      </div>
+      <div class="col-4 text-end">
+        <button class="btn fab border border-5" type="button" data-bs-toggle="offcanvas" data-bs-target="#Todo"
+        aria-controls="todo"><span class="headers" id="total-todo"></span><b class="headers"> Todo</b></button>
+      </div>
     </div>
   </footer>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.23.0/axios.min.js" ></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.23.0/axios.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
     crossorigin="anonymous"></script>

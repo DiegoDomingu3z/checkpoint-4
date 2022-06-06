@@ -6,8 +6,24 @@ import { Pop } from "../Utils/Pop.js";
 function _draw(){
     let todo = ProxyState.todo
     let template = ''
-    todo.forEach(t => template += t.Template)
+    let todoCount = 0
+    let total = 0
+    todo.forEach(t => {
+        template += t.Template
+    if(t.completed == true){
+        todoCount ++
+        
+    }
+    if(t.completed == false){
+        total ++
+        
+    }
+   
+})
     document.getElementById('todo-list').innerHTML = template 
+    document.getElementById('todo-count').innerText = todoCount +  '/' + todo.length
+    document.getElementById('total-todo').innerText = total
+
 }
 
 
@@ -54,8 +70,11 @@ export class TodoController{
 
     async deleteTodo(id){
         try {
-            await todoService.deleteTodo(id)
-            console.log('deleting');
+            if (await Pop.confirm('are you sure you want to delete')){
+
+                todoService.deleteTodo(id)
+                console.log('deleting');
+            }
         } catch (error) {
             console.log(error);
             Pop.toast(error.message,'error')
@@ -63,4 +82,17 @@ export class TodoController{
 
     }
 
+
+
+    async completedTodo(id){
+        try {
+            await todoService.completedTodo(id)
+            console.log('updating');
+        } catch (error) {
+            console.log(error);
+            Pop.toast(error.message,'error')
+        }
+    }
+
+    
 }

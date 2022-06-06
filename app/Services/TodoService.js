@@ -6,7 +6,9 @@ import { sandboxApi } from "./AxiosService.js"
 
 
 
-
+// TODO create function to draw (get), delete (delete), update (put), and add (post)
+// TODO REMEMBER TO ALWAYS LOG THE RES
+//  TODO DONT FORGET YOUR ASYNC AND AWAIT!!!!!!
 class TodoService{
 
     async getTodo(){
@@ -23,9 +25,20 @@ class TodoService{
     }
 
     async deleteTodo(id){
-        const res = await sandboxApi.delete('diego/todos', id)
+        const res = await sandboxApi.delete('diego/todos/' + id)
         console.log('delete', res.data);
         ProxyState.todo = ProxyState.todo.filter(t => t.id != id)
+        ProxyState.todo = ProxyState.todo
+    }
+
+
+    async completedTodo(id){
+        let todo = ProxyState.todo.find(t => t.id == id)
+        console.log(todo);
+        todo.completed = !todo.completed
+        const res = await sandboxApi.put('diego/todos/' + id, todo)
+        console.log('completedTodo', res.data);
+        console.log('completedTodo', res.data);
         ProxyState.todo = ProxyState.todo
     }
 

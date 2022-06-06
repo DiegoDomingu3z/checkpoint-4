@@ -1,1 +1,52 @@
 /* BASIC STYLES HERE */
+
+
+.list{
+    min-height: 8rem;
+    max-height: 8rem;
+    overflow: scroll;
+}
+
+.hide {
+    display: none;
+  }
+
+  .author:hover + .hide {
+    display: block;
+    color: black;
+  }
+
+  .bg{
+      
+      background-image: url(https://pixabay.com/get/g6978b386b98c1f851b1f115a911d937aee3b28cca811d0344f20db11ab9dff264a5a8671567288e09c31ef9d061f74660887c828f985aca3a2014aeac5d18d0b_1280.jpg);
+      clear: both;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .half-black {
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  .custom-checkbox{
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+    
+      
+  }
+
+  .headers{
+      color: white;
+  }
+
+  .captions{
+      color: black;
+      font-weight: bolder;
+      font-style: italic;
+      
+
+    
+
+  }
+  

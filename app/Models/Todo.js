@@ -11,11 +11,13 @@ export class Todo{
 
     get Template(){
 return `
-<div class="bg-light text-dark ">
+<div class="p-3">
 <div>
-  ${this.description} 
+<input class="custom-checkbox checkmark" type="checkbox"  ${this.completed ? 'checked' : ''} onclick="app.todoController.completedTodo('${this.id}')">
+
+  <span class="p-5 text-light">${this.description}</span> 
+  <span class="align-items-end" onclick="app.todoController.deleteTodo('${this.id}')"><i class="mdi mdi-trash-can  btn btn-light" ></i></span>
   </div>
-  <div onclick="app.todoController.deleteTodo('${this.id}')">   <i class="mdi mdi-trash-can" ></i></div>
 
 </div>
 
