@@ -39,13 +39,13 @@ export class Weather {
     
     get Temp(){
 return `
-<div onclick="app.weatherController.seeFa()" class="selectable">${this.Celsius.toFixed(0)} &#176</div>
+<div onclick="app.weatherController.seeFa()" class="selectable">${this.Celsius.toFixed(0)} C &#176</div>
 `
     }
 
     get fTemp(){
         return `
-        <div onclick="app.weatherController.seeCelsius()" class="selectable">${this.far.toFixed(0)} &#176</div>
+        <div onclick="app.weatherController.seeCelsius()" class="selectable">${this.far.toFixed(0)} F &#176</div>
         `
     }
     

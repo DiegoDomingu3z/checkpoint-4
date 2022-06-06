@@ -9,6 +9,14 @@ function _draw(){
     document.getElementById('img').innerHTML = img.Template
 
 }
+// NOTE ask help to figure out how to get background image
+
+function _drawImg(){
+    let img = ProxyState.img.img
+    console.log('drawingimg',img);
+    // FIXME put IMG in place of
+    document.body.style.backgroundImage =`url(${img})`
+}
 
 
 
@@ -18,7 +26,8 @@ export class ImageController{
         console.log('image controller is working');
         this.getImg()
         ProxyState.on('img', _draw)
-        
+        ProxyState.on('img', _drawImg)
+        _drawImg()
     }
 
    async getImg(){

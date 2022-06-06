@@ -21,7 +21,7 @@ export class WeatherController{
         this.getWeather()
         ProxyState.on('weather', _draw)
         _drawTime()
-    
+        
     }
 
 

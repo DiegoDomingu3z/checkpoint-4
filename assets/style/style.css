@@ -13,12 +13,10 @@
 
   .author:hover + .hide {
     display: block;
-    color: black;
   }
 
   .bg{
       
-      background-image: url(https://pixabay.com/get/g6978b386b98c1f851b1f115a911d937aee3b28cca811d0344f20db11ab9dff264a5a8671567288e09c31ef9d061f74660887c828f985aca3a2014aeac5d18d0b_1280.jpg);
       clear: both;
     background-position: center;
     background-size: cover;
@@ -40,13 +38,7 @@
       color: white;
   }
 
-  .captions{
-      color: black;
-      font-weight: bolder;
-      font-style: italic;
-
-
-  }
+ 
 
   .time{
       font-size: 65px;
